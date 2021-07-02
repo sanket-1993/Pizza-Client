@@ -1,0 +1,93 @@
+<div class="header">
+    <!-- <a class="navbar-brand">
+       <img class="logoleft" src="assets/img/logo.png">
+    </a>            -->
+   
+    <button mat-icon-button [matMenuTriggerFor]="menu" class = "dropdown-menu"> 
+        <!-- pass local reference of mat-menu to be opened on this click -->
+        <mat-icon>account_circle</mat-icon>
+      
+
+         <mat-menu #menu="matMenu"> 
+          <!-- give local reference and tell this is manu by assigning 'matMenu' -->
+          <button mat-menu-item (click)='logout()'>           
+              <span class="log"><mat-icon class="icon">power_settings_new</mat-icon>Logout</span>
+          </button>
+
+          <button mat-menu-item class= "ResetYourPassword" routerLink="resetpassword">
+             <span class="log"><mat-icon class="icon">settings</mat-icon>Reset Password</span>
+          </button>
+                   
+        </mat-menu>
+      </button>
+  </div>
+<nav>
+  <ul>
+      <!-- <li class="mainList">
+        <a routerLink="dashboard">
+          <i class="material-icons">home</i><span>DashBoard</span>
+        </a>
+      </li> -->
+      <li class="mainList" (click)="report = !report">
+        <a>
+          <i class="material-icons">description</i><span>Report</span>
+          <i class="material-icons mainListExpand" *ngIf="!report">expand_more</i>
+          <i class="material-icons mainListExpand" *ngIf="report">expand_less</i>
+        </a>
+      </li>
+      <li *ngIf="report">
+        <a routerLink="addNewReport" class="subList">
+          <i class="material-icons">content_paste</i><span>Add New Report</span>
+        </a>
+      </li>
+      <li *ngIf="report" class="mainList">
+        <a routerLink="reportList"  class="subList">
+          <i class="material-icons">list</i><span>Report List</span>
+        </a>
+      </li>
+      <li class="mainList" (click)="group =! group">
+        <a>
+          <i class="material-icons">group</i><span>Groups</span>
+          <i class="material-icons mainListExpand" *ngIf="!group">expand_more</i>
+          <i class="material-icons mainListExpand" *ngIf="group">expand_less</i>
+        </a>
+      </li>
+      <li *ngIf="group">
+        <a routerLink="addNewGroup"  class="subList">
+          <i class="material-icons">description</i><span>Add New Group</span>
+        </a>
+      </li>
+      <li *ngIf="group" class="mainList">
+        <a routerLink="groupList" class="subList">
+          <i class="material-icons">list</i><span>Group List</span>
+        </a>
+      </li>
+      <li class="mainList" (click)="user = !user">
+        <a>
+          <i class="material-icons">person</i><span>Users</span>
+          <i class="material-icons mainListExpand" *ngIf="!user">expand_more</i>
+          <i class="material-icons mainListExpand" *ngIf="user">expand_less</i>
+        </a>
+      </li>
+      <li *ngIf="user">
+        <a routerLink="addNewUser" class="subList">
+          <i class="material-icons">person_add</i><span>Add New User</span>
+        </a>
+      </li>
+      <li class="mainList" *ngIf="user" >
+        <a routerLink="userList" class="subList">
+          <i class="material-icons">list</i><span>User List</span>
+        </a>
+      </li>
+      <li class="mainList">
+        <a routerLink="category">
+          <i class="material-icons">view_list</i><span>Category</span>
+        </a>
+      </li>
+      <li class="mainList">
+        <a routerLink="notification">
+          <i class="material-icons">notifications</i><span>Push Notification</span>
+        </a>
+      </li>
+  </ul>
+</nav>

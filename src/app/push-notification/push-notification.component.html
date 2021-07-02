@@ -1,0 +1,24 @@
+
+<mat-card>
+  <h4>SEND NOTIFICATION</h4>
+      <div class="row"> 
+            <div class="col-6">
+              <mat-form-field class="example-full-width" >
+                <input matInput #message maxlength="256" placeholder="Message" [(ngModel)]="Message" required>
+                <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+              </mat-form-field>
+            </div>
+            <div class="col-6">
+              <button mat-raised-button  class="submit" color="primary" (click)="sendNotification()">Submit</button>
+            </div>
+      </div>  
+</mat-card>
+
+<div id="overlay" *ngIf="overlays">
+<mat-progress-spinner
+class="example-margin"
+[color]="color"
+[mode]="mode"
+[value]="value">
+</mat-progress-spinner>
+</div>

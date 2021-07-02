@@ -1,0 +1,50 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+  
+.example-full-width {
+    width: 100%;
+}
+
+.login-form {
+    margin-bottom: 2%;
+}
+
+.mat-fab.mat-primary, .mat-flat-button.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary, {
+  background-color: #0071ea;
+  border-radius: 0.4rem;
+  margin: 10px;
+}
+
+.mat-card{
+    min-width: 50%;
+    width: 100%;
+    max-width: 60%;
+}
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: inline-block ; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+  
+  .example-margin {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    top: 50%;
+  }
+   .btn-link
+  {
+    margin-left: 347px
+  }

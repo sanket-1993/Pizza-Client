@@ -1,0 +1,86 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+
+  .button-row button,
+.button-row a {
+  margin-right: -23px;
+}
+
+.userList{
+  min-height: 45vh;
+  max-height: 65vh;
+  max-width: 70vh;
+  overflow-y: auto;
+  }
+
+.groupList{
+  min-height: 20vh;
+  max-height: 45vh;
+  max-width: 55vh;
+  overflow-y: auto;
+  border: 0.2px solid beige;
+  }
+  
+.submit{
+  float: right;
+  margin-top:5px;  
+
+}  
+
+.addPadding{
+  padding: 0 0 0 15px;
+}
+
+.test{
+  color: red;
+  margin-top:11.5px;
+  margin-left: 1px;
+}
+
+.test1{
+  margin-top:11.5px;
+  margin-left: 1px;
+  font-size: 18px;
+}
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: inline-block ; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0; 
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+.example-margin {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  top: 50%;
+}
+
+.filepicker{
+  border-radius: 4px;
+  float:right;
+  margin-right: -27px;
+}
+.submit{
+  border-radius: 4px;
+}
+
+.material-icons{
+  font-size: 31px;
+  margin: 6px 0px 0px 10px;
+  color: red;
+}

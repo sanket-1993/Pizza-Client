@@ -1,0 +1,33 @@
+
+<mat-card>
+    <h1 mat-dialog-title>Sign In</h1>
+    <form class="example-form" [formGroup]="signInForm" (ngSubmit)="signIn()">
+        <mat-form-field class="example-full-width login-form">
+            <input matInput placeholder="Enter your email" formControlName="email" #paceEmail required>
+            <mat-error *ngIf="this.checkform.email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width login-form">
+            <input matInput type="password" placeholder="Password" formControlName="password" #pacePassword value="" [type]="hide ? 'text' : 'password'">
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+            <mat-error *ngIf="this.checkform.password.invalid">{{getErrorMessagePassWord()}}</mat-error>
+        </mat-form-field>
+
+        <!-- <re-captcha (resolved)="recaptcha_callback()" siteKey="6LemHn8UAAAAAB2sCPrhjirtBe-JzvAHY1fG90lt" datacallback="recaptcha_callback()"></re-captcha> -->
+
+
+        <button mat-raised-button [mat-dialog-close]="">Cancel</button>
+        <button mat-raised-button color="primary"cdkFocusInitials>Sign In</button>
+        <!-- <button mat-raised-button [disabled]="isCaptchaValidated" color="primary"cdkFocusInitials>Sign In</button> -->
+
+        <a [routerLink]="['/forgotPassword']" routerLinkActive="active" class="btn btn-link">ForgotPassword</a>
+    </form>
+</mat-card>
+
+<div id="overlay" *ngIf="overlays">
+    <mat-progress-spinner
+    class="example-margin"
+    [color]="color"
+    [mode]="mode"
+    [value]="value">
+    </mat-progress-spinner>
+</div>

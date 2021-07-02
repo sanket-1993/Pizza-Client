@@ -1,0 +1,73 @@
+<mat-card>
+  <form [formGroup]='updateUserForm'>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="example-container">
+        <mat-form-field>
+          <input matInput placeholder="Company Name" formControlName="companyName" required>
+          <mat-error *ngIf="this.formError.companyName.hasError('required')">
+              Company Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field> 
+       
+        <mat-form-field>
+          <input matInput placeholder="User Name" formControlName="fullName" required>
+          <mat-error *ngIf="this.formError.fullName.hasError('required')">
+               Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field >
+            <input matInput placeholder="Email" formControlName="email" required>
+            <mat-error *ngIf="this.formError.email.hasError('email') && !this.formError.email.hasError('required')">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="this.formError.email.hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Birthdate" formControlName="birthDate" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="this.formError.birthDate.hasError('required')">
+              BirthDate is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Contact" inputmode="numeric" value data-invalid="true" formControlName="contact">
+        </mat-form-field>
+
+        <div class="role">
+            <mat-form-field>
+                  <mat-select placeholder="Role" formControlName="PermissionId" required>
+                    <mat-option *ngFor="let role of RoleInfoArray" [value]="role">{{role.Name}}</mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="this.formError.PermissionId.hasError('required')">
+                      Role is <strong>required</strong>
+                  </mat-error>
+            </mat-form-field>
+        </div>
+
+        <p class="requiredText">*Required Fields</p>
+       
+        <div class="button-row">
+          <button mat-raised-button color="primary" (click)="submit()">Update</button>
+        </div>
+        
+      </div>
+  </div>   
+</div>
+</form>
+</mat-card>
+
+<div id="overlay" *ngIf="overlays">
+  <mat-progress-spinner
+  class="example-margin"
+  [color]="color"
+  [mode]="mode"
+  [value]="value">
+  </mat-progress-spinner>
+</div>
