@@ -2,11 +2,11 @@ import { Component, OnInit,ViewChild } from '@angular/core';
 import { MatPaginator,MatTableDataSource} from '@angular/material';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Router, Resolve, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
-import {GlobalService} from '../global.service';
+import {GlobalService} from '../services/global.service';
 import { ToastrService } from 'ngx-toastr';
-import { MessageProviderService } from '../message-provider.service';
-import { APIsService }  from '../apis.service';
-import { AuthService } from '../auth.service';
+import { MessageProviderService } from '../services/message-provider.service';
+import { APIsService }  from '../services/apis.service';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({

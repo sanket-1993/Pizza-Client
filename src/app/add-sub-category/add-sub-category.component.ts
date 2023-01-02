@@ -3,11 +3,11 @@ import {ActivatedRoute} from '@angular/router';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { MatPaginator,MatTableDataSource} from '@angular/material';
 import { Router, Resolve, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
-import { GlobalService} from '../global.service';
+import { GlobalService} from '../services/global.service';
 import { ToastrService } from 'ngx-toastr';
-import { MessageProviderService } from '../message-provider.service';
-import { APIsService } from '../apis.service';
-import { AuthService } from '../auth.service';
+import { MessageProviderService } from '../services/message-provider.service';
+import { APIsService } from '../services/apis.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-add-sub-category',
@@ -48,7 +48,7 @@ export class AddSubCategoryComponent implements OnInit {
 
   getSubCategories()
   {
-    const API_URL=this.apiService.API_URL+this.apiService.GetSubCategory;
+    const API_URL=this.apiService.URL+this.apiService.GetSubCategory;
 
     const headers={
       headers:new HttpHeaders({
@@ -86,12 +86,7 @@ export class AddSubCategoryComponent implements OnInit {
 
 
    getSubCategoryData(){
-    //const API_URL="http://caivaportalpluswebservices.azurewebsites.net/api/Report/GetSpecificCategory";
-    // const API_URL=this.apiService.API_URL+this.apiService.GetSpecificCategory;    
-    // const options= {
-    //   headers: new HttpHeaders({
-    //     'Authorization':'Bearer '+window.localStorage.getItem('TokenInLocal'),
-    //   }),
+
      var params =new HttpParams()
           .set('categoryId', this.categoryID)
       

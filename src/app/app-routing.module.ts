@@ -1,32 +1,27 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UserListComponent } from './user-list/user-list.component';
+import { UserListComponent } from './user/user-list/user-list.component';
 import { CategoryComponent } from './category/category.component';
-import { GroupListComponent } from './group-list/group-list.component';
-import { ReportListComponent } from './report-list/report-list.component';
-import { AddNewUserComponent } from './add-new-user/add-new-user.component';
-import { AddNewGroupComponent } from './add-new-group/add-new-group.component';
-import { AddNewReportComponent  } from './add-new-report/add-new-report.component';
+import { GroupListComponent } from './group/group-list/group-list.component';
+import { ReportListComponent } from './report/report-list/report-list.component';
+import { AddNewUserComponent } from './user/add-new-user/add-new-user.component';
+import { AddNewGroupComponent } from './group/add-new-group/add-new-group.component';
+import { AddNewReportComponent  } from './report/add-new-report/add-new-report.component';
 import { PushNotificationComponent  } from './push-notification/push-notification.component';
-import { DashBoardComponent } from './dash-board/dash-board.component';
 import { AddSubCategoryComponent } from './add-sub-category/add-sub-category.component';
-import {UpdateReportComponent}from './update-report/update-report.component';
-import {UpdateUserComponent}from './update-user/update-user.component';
-import {UpdateGroupComponent}from './update-group/update-group.component';
-import { LoginComponent } from './login/login.component';
-import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { AuthGuard } from './auth.guard';
+import {UpdateReportComponent}from './report/update-report/update-report.component';
+import {UpdateUserComponent}from './user/update-user/update-user.component';
+import {UpdateGroupComponent}from './group/update-group/update-group.component';
+import { LoginComponent } from './user/login/login.component';
+import { ResetpasswordComponent } from './user/resetpassword/resetpassword.component';
+import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
+import { AuthGuard } from './guard/auth.guard';
 //import { BotDetectCaptchaModule } from 'angular-captcha';
 
 const routes: Routes = [{ 
     path: '', 
     component: AddNewReportComponent,
     canActivate:[AuthGuard]
-  },{
-    path:'dashboard',
-    component: DashBoardComponent,
-    canActivate:[AuthGuard] 
   },{
     path:'category',
     component: CategoryComponent,
